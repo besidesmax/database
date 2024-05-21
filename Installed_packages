@@ -1,0 +1,4 @@
+The following packages are installed in the database.env
+-sqlalchemy
+-sqlalchemy-utils
+-pymysql
