@@ -93,3 +93,4 @@ class Professor(Base):
     def __repr__(self):
         return f"{self.professor_id} , {self.first_name} , {self.last_name} , \
                  {self.date_of_birth} , {self.address}"
+
