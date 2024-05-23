@@ -1,4 +1,4 @@
-
+from sqlalchemy import create_engine
 # login-data for the Server TODO change with input or import form data at the end
 hostname = "localhost"
 username = "root"
@@ -8,6 +8,8 @@ port = "3306"
 database = "database_university"
 
 # TODO insert Test if Server exist and connection is possible
-# crete a engine for connection with DB
+# engine for sqlalchemy operations
+engine_create = \
+    create_engine("mysql+pymysql://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database)
+# engine for sqlalchemy_utils operations
 engine = ("mysql+pymysql://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database)
-
