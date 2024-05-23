@@ -1,5 +1,3 @@
-from sqlalchemy import create_engine
-from sqlalchemy_utils import create_database
 
 # login-data for the Server TODO change with input or import form data at the end
 hostname = "localhost"
@@ -9,6 +7,7 @@ password = "!9PQ!X%40^1B5ChkwE"
 port = "3306"
 database = "database_university"
 
-create_database("mysql+pymysql://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database)
-
+# TODO insert Test if Server exist and connection is possible
+# crete a engine for connection with DB
+engine = ("mysql+pymysql://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database)
 
