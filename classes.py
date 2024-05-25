@@ -7,21 +7,21 @@ Base = declarative_base()
 class Student(Base):
     __tablename__ = "students"
 
-    students_id = Column("students_id", Integer, primary_key=True, nullable=False)
+    student_id = Column("student_id", Integer, primary_key=True, nullable=False)
     first_name = Column("first_name", String(50))
     last_name = Column("last_name", String(50))
     date_of_birth = Column("date_of_birth", DateTime)
     address = Column("address", String(100))
 
-    def __init__(self, students_id, first_name, last_name, date_of_birth, address):
-        self.students_id = students_id
+    def __init__(self, student_id, first_name, last_name, date_of_birth, address):
+        self.student_id = student_id
         self.first_name = first_name
         self.last_name = last_name
         self.date_of_birth = date_of_birth
         self.address = address
 
     def __repr__(self):
-        return f"{self.students_id} , {self.first_name} , {self.last_name} , \
+        return f"{self.student_id} , {self.first_name} , {self.last_name} , \
                  {self.date_of_birth} , {self.address}"
 
 
@@ -55,23 +55,24 @@ class Course(Base):
         self.requirement_5 = requirement_5
 
     def __repr__(self):
-        return (F"{self.course_id} , {self.name} , {self.ects} , {self.active} , {self.optional} \
+        return f"{self.course_id} , {self.name} , {self.ects} , {self.active} , {self.optional} \
                 {self.study_programm} , {self.requirement_1} , {self.requirement_2} , {self.requirement_3} \
-                {self.requirement_4} , {self.requirement_5}")
+                {self.requirement_4} , {self.requirement_5}"
 
 
 class Program(Base):
     __tablename__ = "study_program"
 
-    programm_id = Column("programm_id", Integer, primary_key=True, nullable=False)
+    program_id = Column("program_id", Integer, primary_key=True, nullable=False)
     name = Column("name", String(50))
 
-    def __init__(self, programm_id, name):
-        self.programm_id = programm_id
+    def __init__(self, program_id, name):
+        self.program_id = program_id
         self.name = name
 
+
     def __repr__(self):
-        return F" {self.programm_id} , {self.name}"
+        return f" {self.program_id} , {self.name}"
 
 
 class Professor(Base):
@@ -94,3 +95,20 @@ class Professor(Base):
         return f"{self.professor_id} , {self.first_name} , {self.last_name} , \
                  {self.date_of_birth} , {self.address}"
 
+
+class Grade(Base):
+    __tablename__ = "grades"
+
+    grade_id = Column("grades_id", Integer, primary_key=True, autoincrement=True)
+    course_id = Column("course_id", ForeignKey("courses.course_id"))
+    student_id = Column("student_id", ForeignKey("students.student_id"))
+    grade = Column("grades", Integer)
+
+    def __init__(self, grade_id, course_id, student_id, grade):
+        self.grade_id = grade_id
+        self.course_id = course_id
+        self.student_id = student_id
+        self.grade = grade
+
+    def __repr__(self):
+        return f" {self.grade_id} , {self.course_id} , {self.student_id} , {self.grade}"
