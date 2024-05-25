@@ -11,18 +11,18 @@ class Student(Base):
     first_name = Column("first_name", String(50))
     last_name = Column("last_name", String(50))
     date_of_birth = Column("date_of_birth", DateTime)
-    address = Column("address", String(100))
+    address_id = Column("address_id", ForeignKey("addresses.address_id"))
 
-    def __init__(self, student_id, first_name, last_name, date_of_birth, address):
+    def __init__(self, student_id, first_name, last_name, date_of_birth, address_id):
         self.student_id = student_id
         self.first_name = first_name
         self.last_name = last_name
         self.date_of_birth = date_of_birth
-        self.address = address
+        self.address_id= address_id
 
     def __repr__(self):
         return f"{self.student_id} , {self.first_name} , {self.last_name} , \
-                 {self.date_of_birth} , {self.address}"
+                 {self.date_of_birth} , {self.address_id}"
 
 
 class Course(Base):
@@ -70,7 +70,6 @@ class Program(Base):
         self.program_id = program_id
         self.name = name
 
-
     def __repr__(self):
         return f" {self.program_id} , {self.name}"
 
@@ -82,18 +81,18 @@ class Professor(Base):
     first_name = Column("first_name", String(50))
     last_name = Column("last_name", String(50))
     date_of_birth = Column("date_of_birth", DateTime)
-    address = Column("address", String(100))
+    address_id = Column("address_id", ForeignKey("addresses.address_id"))
 
-    def __init__(self, professor_id, first_name, last_name, date_of_birth, address):
+    def __init__(self, professor_id, first_name, last_name, date_of_birth, address_id):
         self.professor_id = professor_id
         self.first_name = first_name
         self.last_name = last_name
         self.date_of_birth = date_of_birth
-        self.address = address
+        self.address_id = address_id
 
     def __repr__(self):
         return f"{self.professor_id} , {self.first_name} , {self.last_name} , \
-                 {self.date_of_birth} , {self.address}"
+                 {self.date_of_birth} , {self.address_id}"
 
 
 class Grade(Base):
@@ -112,3 +111,26 @@ class Grade(Base):
 
     def __repr__(self):
         return f" {self.grade_id} , {self.course_id} , {self.student_id} , {self.grade}"
+
+
+class Address(Base):
+    __tablename__ = "addresses"
+
+    address_id = Column("address_id", Integer, primary_key=True, autoincrement=True)
+    country = Column("country", String(100))
+    city = Column("city", String(100))
+    zip_code = Column("zip_code", Integer)
+    street = Column("street", String(100))
+    building_number = Column("building_number", Integer)
+
+    def __init__(self, address_id, country, city, zip_code, street, building_number):
+        self.address_id = address_id
+        self.country = country
+        self.city = city
+        self.zip_code = zip_code
+        self.street = street
+        self.building_number = building_number
+
+    def __repr__(self):
+        return f"{self.address_id} , {self.country} , {self.city} , {self.zip_code} ,\
+                 {self.street} , {self.building_number}"
