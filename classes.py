@@ -8,20 +8,22 @@ class Student(Base):
     __tablename__ = "students"
 
     student_id = Column("student_id", Integer, primary_key=True, nullable=False)
+    student_number = Column("studen_number", Integer)
     first_name = Column("first_name", String(50))
     last_name = Column("last_name", String(50))
     date_of_birth = Column("date_of_birth", DateTime)
     address_id = Column("address_id", ForeignKey("addresses.address_id"))
 
-    def __init__(self, student_id, first_name, last_name, date_of_birth, address_id):
+    def __init__(self, student_id, student_number, first_name, last_name, date_of_birth, address_id):
         self.student_id = student_id
+        self.student_number = student_number
         self.first_name = first_name
         self.last_name = last_name
         self.date_of_birth = date_of_birth
         self.address_id= address_id
 
     def __repr__(self):
-        return f"{self.student_id} , {self.first_name} , {self.last_name} , \
+        return f"{self.student_id} , {self.student_number} , {self.first_name} , {self.last_name} , \
                  {self.date_of_birth} , {self.address_id}"
 
 
@@ -33,7 +35,7 @@ class Course(Base):
     ects = Column("ects", Integer)
     active = Column("active", Boolean)
     optional = Column("optional", Boolean)
-    study_programm = Column("study_program", ForeignKey("study_program.program_id"))
+    study_program = Column("study_program", ForeignKey("study_program.program_id"))
     requirement_1 = Column("requirement_1", ForeignKey("courses.course_id"))
     requirement_2 = Column("requirement_2", ForeignKey("courses.course_id"))
 
@@ -45,13 +47,13 @@ class Course(Base):
         self.ects = ects
         self.active = active
         self.optional = optional
-        self.study_programm = study_program
+        self.study_program = study_program
         self.requirement_1 = requirement_1
         self.requirement_2 = requirement_2
 
-    def __repr__(self):
+    def __repr__(self):  # TODO show course.name insteadof course.id at requirements also study_program
         return f"{self.course_id} , {self.name} , {self.ects} , {self.active} , {self.optional} \
-                {self.study_programm} , {self.requirement_1} , {self.requirement_2}"
+                {self.study_program} , {self.requirement_1} , {self.requirement_2}"
 
 
 class Program(Base):
