@@ -36,12 +36,10 @@ class Course(Base):
     study_programm = Column("study_program", ForeignKey("study_program.program_id"))
     requirement_1 = Column("requirement_1", ForeignKey("courses.course_id"))
     requirement_2 = Column("requirement_2", ForeignKey("courses.course_id"))
-    requirement_3 = Column("requirement_3", ForeignKey("courses.course_id"))
-    requirement_4 = Column("requirement_4", ForeignKey("courses.course_id"))
-    requirement_5 = Column("requirement_5", ForeignKey("courses.course_id"))
+
 
     def __init__(self, course_id, name, ects, active, optional, study_program, requirement_1,
-                 requirement_2, requirement_3, requirement_4, requirement_5):
+                 requirement_2):
         self.course_id = course_id
         self.name = name
         self.ects = ects
@@ -50,14 +48,10 @@ class Course(Base):
         self.study_programm = study_program
         self.requirement_1 = requirement_1
         self.requirement_2 = requirement_2
-        self.requirement_3 = requirement_3
-        self.requirement_4 = requirement_4
-        self.requirement_5 = requirement_5
 
     def __repr__(self):
         return f"{self.course_id} , {self.name} , {self.ects} , {self.active} , {self.optional} \
-                {self.study_programm} , {self.requirement_1} , {self.requirement_2} , {self.requirement_3} \
-                {self.requirement_4} , {self.requirement_5}"
+                {self.study_programm} , {self.requirement_1} , {self.requirement_2}"
 
 
 class Program(Base):
