@@ -7,7 +7,7 @@ Base = declarative_base()
 class Student(Base):
     __tablename__ = "students"
 
-    student_id = Column("student_id", Integer, primary_key=True, nullable=False)
+    student_id = Column("student_id", Integer, primary_key=True)
     student_number = Column("studen_number", Integer)
     first_name = Column("first_name", String(50))
     last_name = Column("last_name", String(50))
@@ -112,7 +112,7 @@ class Grade(Base):
 class Address(Base):
     __tablename__ = "addresses"
 
-    address_id = Column("address_id", Integer, primary_key=True, autoincrement=True)
+    address_id = Column("address_id", Integer, primary_key=True)
     country = Column("country", String(100))
     city = Column("city", String(100))
     zip_code = Column("zip_code", Integer)
