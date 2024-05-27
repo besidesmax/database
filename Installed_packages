@@ -3,3 +3,4 @@ The following packages are installed in the database.env
 -sqlalchemy-utils
 -pymysql
 -mysql-connector-python
+-pandas
