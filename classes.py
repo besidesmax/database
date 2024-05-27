@@ -3,6 +3,27 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
+class Address(Base):
+    __tablename__ = "addresses"
+
+    address_id = Column("address_id", Integer, primary_key=True)
+    country = Column("country", String(100))
+    city = Column("city", String(100))
+    zip_code = Column("zip_code", Integer)
+    street = Column("street", String(100))
+    building_number = Column("building_number", Integer)
+
+    def __init__(self, address_id, country, city, zip_code, street, building_number):
+        self.address_id = address_id
+        self.country = country
+        self.city = city
+        self.zip_code = zip_code
+        self.street = street
+        self.building_number = building_number
+
+    def __repr__(self):
+        return f"{self.address_id} , {self.country} , {self.city} , {self.zip_code} ,\
+                 {self.street} , {self.building_number}"
 
 class Student(Base):
     __tablename__ = "students"
@@ -108,24 +129,4 @@ class Grade(Base):
         return f" {self.grade_id} , {self.course_id} , {self.student_id} , {self.grade}"
 
 
-class Address(Base):
-    __tablename__ = "addresses"
 
-    address_id = Column("address_id", Integer, primary_key=True)
-    country = Column("country", String(100))
-    city = Column("city", String(100))
-    zip_code = Column("zip_code", Integer)
-    street = Column("street", String(100))
-    building_number = Column("building_number", Integer)
-
-    def __init__(self, address_id, country, city, zip_code, street, building_number):
-        self.address_id = address_id
-        self.country = country
-        self.city = city
-        self.zip_code = zip_code
-        self.street = street
-        self.building_number = building_number
-
-    def __repr__(self):
-        return f"{self.address_id} , {self.country} , {self.city} , {self.zip_code} ,\
-                 {self.street} , {self.building_number}"
