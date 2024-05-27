@@ -1,4 +1,4 @@
-﻿index;country;city;zip_code;street;building_number
+﻿address_id;country;city;zip_code;street;building_number
 0;Dominica;Claudehaven;8588;80609 Magdalena Forge;760
 1;Iran;North Reanna;5118;8885 Theresa Burg;27074
 2;Falkland Islands (Malvinas);Shannyville;5171;6007 Rosemary Rapid;1818
