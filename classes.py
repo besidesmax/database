@@ -8,7 +8,7 @@ class Student(Base):
     __tablename__ = "students"
 
     student_id = Column("student_id", Integer, primary_key=True)
-    student_number = Column("studen_number", Integer)
+    student_number = Column("student_number", Integer)
     first_name = Column("first_name", String(50))
     last_name = Column("last_name", String(50))
     date_of_birth = Column("date_of_birth", DateTime)
@@ -20,7 +20,7 @@ class Student(Base):
         self.first_name = first_name
         self.last_name = last_name
         self.date_of_birth = date_of_birth
-        self.address_id= address_id
+        self.address_id = address_id
 
     def __repr__(self):
         return f"{self.student_id} , {self.student_number} , {self.first_name} , {self.last_name} , \
@@ -38,7 +38,6 @@ class Course(Base):
     study_program = Column("study_program", ForeignKey("study_program.program_id"))
     requirement_1 = Column("requirement_1", ForeignKey("courses.course_id"))
     requirement_2 = Column("requirement_2", ForeignKey("courses.course_id"))
-
 
     def __init__(self, course_id, name, ects, active, optional, study_program, requirement_1,
                  requirement_2):
