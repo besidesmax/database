@@ -1,4 +1,4 @@
-"id","course_id","student_id","grade"
+"grade_id","course_id","student_id","grade"
 "1","122","711","3"
 "2","34","528","5"
 "3","121","169","3"
