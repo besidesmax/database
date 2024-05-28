@@ -60,8 +60,7 @@ class Course(Base):
     optional = Column("optional", Boolean)
     study_program = Column("study_program", ForeignKey("study_program.program_id"))
 
-    def __init__(self, course_id, name, ects, active, optional, study_program, requirement_1,
-                 requirement_2):
+    def __init__(self, course_id, name, ects, active, optional, study_program):
         self.course_id = course_id
         self.name = name
         self.ects = ects
