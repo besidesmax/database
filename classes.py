@@ -3,6 +3,7 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
+
 class Address(Base):
     __tablename__ = "addresses"
 
@@ -24,6 +25,7 @@ class Address(Base):
     def __repr__(self):
         return f"{self.address_id} , {self.country} , {self.city} , {self.zip_code} ,\
                  {self.street} , {self.building_number}"
+
 
 class Student(Base):
     __tablename__ = "students"
@@ -57,8 +59,6 @@ class Course(Base):
     active = Column("active", Boolean)
     optional = Column("optional", Boolean)
     study_program = Column("study_program", ForeignKey("study_program.program_id"))
-    requirement_1 = Column("requirement_1", ForeignKey("courses.course_id"))
-    requirement_2 = Column("requirement_2", ForeignKey("courses.course_id"))
 
     def __init__(self, course_id, name, ects, active, optional, study_program, requirement_1,
                  requirement_2):
@@ -68,12 +68,10 @@ class Course(Base):
         self.active = active
         self.optional = optional
         self.study_program = study_program
-        self.requirement_1 = requirement_1
-        self.requirement_2 = requirement_2
 
     def __repr__(self):  # TODO show course.name insteadof course.id at requirements also study_program
         return f"{self.course_id} , {self.name} , {self.ects} , {self.active} , {self.optional} \
-                {self.study_program} , {self.requirement_1} , {self.requirement_2}"
+                {self.study_program}"
 
 
 class Program(Base):
@@ -127,6 +125,3 @@ class Grade(Base):
 
     def __repr__(self):
         return f" {self.grade_id} , {self.course_id} , {self.student_id} , {self.grade}"
-
-
-
