@@ -112,10 +112,10 @@ class Professor(Base):
 class Grade(Base):
     __tablename__ = "grades"
 
-    grade_id = Column("grades_id", Integer, primary_key=True, autoincrement=True)
+    grade_id = Column("grade_id", Integer, primary_key=True, autoincrement=False)
     course_id = Column("course_id", ForeignKey("courses.course_id"))
     student_id = Column("student_id", ForeignKey("students.student_id"))
-    grade = Column("grades", Integer)
+    grade = Column("grade", Integer)
 
     def __init__(self, grade_id, course_id, student_id, grade):
         self.grade_id = grade_id
