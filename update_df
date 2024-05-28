@@ -1,0 +1,19 @@
+a = [1, 2, 3, 4, 5]
+new_grades = choices(a, k=23000)
+
+b = list(range(1, 2001))
+new_students = choices(b, k=23000)
+
+c = list(range(1, 151))
+new_courses = choices(c, k=23000)
+
+df_new_students = pd.DataFrame(new_students, columns=["student_id"])
+
+df_new_grades = pd.DataFrame(new_grades, columns=["grade"])
+
+df_new_courses = pd.DataFrame(new_courses, columns=["course_id"])
+
+df_grades.update(df_new_grades)
+df_grades.update(df_new_courses)
+df_grades.update(df_new_students)
+df_grades.to_csv("grades_update.csv", index=False)
