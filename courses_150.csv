@@ -1,151 +1,151 @@
-﻿course_id,name,ects,active,optional,program_id
-1,Informatik und Recht,4,true,false,1
-2,Technische Gurndlagen,8,true,false,1
-3,Programmieren 1,5,true,false,1
-4,Modulieren,2,true,false,1
-5,Betriebssysteme,9,true,false,1
-6,Projektmanagement,8,true,false,1
-7,Datenbanksysteme,1,true,false,1
-8,Software Engineering,5,true,false,1
-9,mathematische Grundlagen,7,true,false,1
-10,Informationssicherheit,8,true,false,1
-11,Theoretische Grundlagen,8,true,true,1
-12,Algorithmen und Datenstrukturen,5,true,true,1
-13,Informatik und Gesellschaft,2,false,false,1
-14,Programmieren 2,4,true,false,1
-15,Theoretische Grundlagen,1,true,false,2
-16,praktische Philosophie,9,true,false,2
-17,Philosophie und Lernen,2,true,false,2
-18,Denken und Sprache,2,true,false,2
-19,Geschichte der Philosophie,8,true,false,2
-20,Medienphilosophie,6,true,false,2
-21,Interkulurelle Philosophie,6,true,false,2
-22,Erkenntnistheorie,4,true,false,2
-23,Philosophie des Geistes,9,true,false,2
-24,Religionsphilosophie,8,true,false,2
-25,Ethik,2,true,true,2
-26,Sozialphilosophie,2,true,true,2
-27, Philosophie der Gegenwart,5,false,false,2
-28,Wissenenschaftsphilosophie,4,true,false,2
-29,Grundlagen historischen Denkens,3,true,false,3
-30,Einführung Geisteswissenschaften,9,true,false,3
-31,Quellen und Methoden,7,true,false,3
-32,Wissenschaftliches Denken,8,true,false,3
-33,Epochen,7,true,false,3
-34,Aspekte und Räume,4,true,false,3
-35,Historisches Arbeiten,9,true,false,3
-36,Veriefung,5,true,false,3
-37,Integrated Language,4,true,false,4
-38,Language in Use,1,true,false,4
-39,Oral Language Skills,2,true,false,4
-40,Linguistics,2,true,false,4
-41,Media Studies,6,true,false,4
-42,Cultural Studies,9,true,false,4
-43,Literary Studies,7,true,false,4
-44,GL allgemeine Betriebswirtschaft,1,true,false,5
-45,GL Volkswirtschaftslehre,3,true,false,5
-46,GL Statistik,2,true,false,5
-47,Unternehmensführung,4,true,false,5
-48,Produktion und Logistik,4,true,false,5
-49,Marketing,3,true,false,5
-50,Finanzwirtschaft,3,true,false,5
-51,Betriebswirtschaftliches Rechnungswesen,8,true,false,5
-52,Quantitative Methoden,4,false,true,5
-53,Volkswirtschaftslehre,2,true,false,5
-54,Soziologoe und Informationstechnologie,2,true,false,5
-55,GL Recht,9,true,false,5
-56,Recht,2,true,false,5
-57,Business english,5,false,true,5
-58,Statistik,5,true,false,6
-59,truescheinlickeitsrechnung,1,true,false,6
-60,GL Inferenzstatistik,2,true,false,6
-61,GL Mathematik,2,true,false,6
-62,Lineare Algebra,5,true,false,6
-63,Analyse,2,true,false,6
-64,hochdimensionale Daten,2,true,false,6
-65,Lineare Modelle,2,true,false,6
-66,Biostatistik,2,true,false,6
-67,Software und Computer Statistik,7,true,false,6
-68,Ökonomie,9,true,false,6
-69,Versicherungsmathematik,4,true,false,6
-70,GL Soziologie,3,true,false,7
-71,Bevölkerungssoziologie,3,true,false,7
-72,soziologische Theorie,1,true,false,7
-73,Gesellschaft im Wandel,8,true,false,7
-74,Sozialwissenschaftlichegrundlagen,3,true,false,7
-75,GL Quantitative Methoden,2,true,false,7
-76,Einführung Rechtswissenschaften,6,true,false,8
-77,Europarecht,2,true,false,8
-78,internationales Recht,3,true,false,8
-79,Straf und Prozessrecht,7,true,false,8
-80,Bürgerliches Recht,8,true,false,8
-81,Unternehmensrecht,9,true,false,8
-82,Zivilverfahrensrecht,9,true,false,8
-83,Arbeitsrecht,7,true,false,8
-84,Sozialrecht,7,true,false,8
-85,Privatrecht,8,true,false,8
-86,öffentliches Recht,5,true,false,8
-87,Völkerrecht,5,true,false,8
-88,Steuerrecht,7,true,false,8
-89,Methoden der Kommunikationswissenschaft,3,true,false,9
-90,Theorien der Kommunikationswissenschaft,2,true,false,9
-91,Forschungspraxis,8,true,false,9
-92,Spezialgebiete der Kommunikationswissenschaft,5,true,false,9
-93,Theorie und Praxis der Kommunikationswissenschaft,6,true,false,9
-94,gesellschaftliche Kommunikation,9,true,true,9
-95,Wissenscahftliche Konzepte der Psychologie,9,true,false,10
-96,Einführung Sozialpsychologie,2,true,false,10
-97,Einführung Entwicklungspsychologie,7,true,false,10
-98,Allgemeine Psychologie,1,true,false,10
-99,Biologische Psychologie,7,true,false,10
-100,Vertiefung allgemeine Psychologie,2,true,false,10
-101,Vertiefung biologische Psychologie,2,true,false,10
-102,Neurowissenschaften,2,true,false,10
-103,Praktikum,5,true,false,10
-104,Sozialsychologie II,2,true,false,10
-105,Entwicklungspsychologie II,5,true,false,10
-106,Differentielle Psychologie,3,true,false,10
-107,Vertiefung in Sozialpsychologie,4,true,true,10
-108,Vertiefung Enwicklungspsychologie,1,true,true,10
-109,Vertiefung Differentielle Psychologie,7,true,true,10
-110,Diversitäts und Genderforschug,1,false,false,10
-111,Einführung Pharmazie,2,true,false,11
-112,Biologische GL Pharmazie,6,true,false,11
-113,Chemische GL Pharmazie,1,true,false,11
-114,Einführung Physik,2,true,false,11
-115,GL Arzneibuchanalytik,2,true,false,11
-116,Nasschemische Arzneibuchanalytik,3,true,true,11
-117,GL der Pharmazeutischen Chemie 1,3,true,false,11
-118,GL der Pharmazeutischen Chemie 2,9,true,false,11
-119,Anatomie und Pysiologie,5,true,false,11
-120,Molekulare Biologie,2,true,false,11
-121,Arzneistoffanalytik,8,true,false,11
-122,Hygiene und Mikrobiologie,3,true,true,11
-123,Pharmazeutische Chemie,5,true,false,11
-124,Pharmazeutische Technologie,8,true,false,11
-125,Biochemie,2,true,false,11
-126,Pharmazeutische Qualität biogener Arzneimittel,6,false,true,11
-127,Pharmazeutische Wissenschaft,2,true,false,11
-128,Grundlagen der Ernährungslehre,6,true,false,12
-129,Grundlagen der  Chemie,1,true,false,12
-130,Einführung Biostatistik,10,true,false,12
-131,wissenschaftliches Arbeiten,2,true,false,12
-132,Allgemeine Molekulare Biologie,6,true,false,12
-133,Medizinische Grundlagen,3,true,false,12
-134,Biochemische Grundlagen,8,true,false,12
-135,Chemische Vertiefung,9,true,false,12
-136,praktische chemische Vertiefung,7,true,false,12
-137,Lebensmittelwissenschaft,6,true,false,12
-138,Humanernährung I,1,true,false,12
-139,Humanernährung II,8,true,false,12
-140,Lebensmittelsicherheiit,1,true,false,12
-141,Public Health Nutrition,4,false,true,12
-142,Qualitätsmanagement,2,true,false,12
-143,Sportmedizin,1,true,false,13
-144,Sportsoziologie,6,true,false,13
-145,Biomechanik,6,true,false,13
-146,Sportpädagogik,3,true,false,13
-147,Trainingswissenschaft,8,true,false,13
-148,Sportdidaktik,5,true,false,13
-149,Leistungsphysiologie,2,true,false,13
-150,Aufbau Sportmedizin,3,true,false,13
+course_id,name,ects,active,optional,program_id
+1,Advanced multi-tasking ability,11,False,True,12
+2,Quality-focused 24/7 website,6,False,True,4
+3,Networked fault-tolerant encoding,8,True,False,9
+4,Implemented high-level neural-net,14,False,True,4
+5,Team-oriented national concept,14,False,False,2
+6,Re-contextualized context-sensitive toolset,11,False,False,6
+7,Open-architected zero tolerance implementation,6,False,True,12
+8,Down-sized interactive function,6,True,True,4
+9,Up-sized composite paradigm,13,False,True,7
+10,Compatible web-enabled flexibility,11,True,False,2
+11,Object-based impactful architecture,6,False,False,8
+12,Integrated motivating strategy,9,True,False,1
+13,Profit-focused hybrid installation,9,True,False,6
+14,Exclusive human-resource workforce,11,True,True,7
+15,Profit-focused heuristic open architecture,9,False,True,10
+16,Re-contextualized mission-critical hardware,5,True,True,10
+17,Optional web-enabled benchmark,8,True,True,9
+18,Multi-layered static archive,11,True,False,4
+19,Switchable executive hierarchy,8,False,False,8
+20,Up-sized bifurcated support,5,True,True,6
+21,Horizontal uniform time-frame,11,False,False,9
+22,Open-source mobile Graphic Interface,6,False,False,13
+23,Reduced multi-state open architecture,11,True,False,6
+24,Customizable bandwidth-monitored help-desk,10,True,True,9
+25,User-friendly client-server extranet,11,False,True,3
+26,Face-to-face actuating complexity,5,False,False,11
+27,Fully-configurable upward-trending moderator,5,True,True,11
+28,Persevering value-added infrastructure,5,False,True,13
+29,Total optimal budgetary management,8,False,False,13
+30,Inverse real-time adapter,13,True,False,7
+31,Programmable uniform workforce,6,True,True,11
+32,Distributed optimal installation,7,False,True,10
+33,Configurable homogeneous architecture,13,True,False,6
+34,Upgradable needs-based pricing structure,9,False,True,7
+35,Ameliorated executive approach,7,True,False,12
+36,Configurable tangible extranet,6,False,False,3
+37,Team-oriented regional ability,14,False,True,12
+38,Cross-platform encompassing alliance,9,False,True,12
+39,Exclusive impactful function,14,False,False,3
+40,Automated disintermediate definition,7,False,True,9
+41,Seamless bi-directional task-force,6,True,False,3
+42,Advanced asynchronous complexity,13,True,True,13
+43,Right-sized needs-based benchmark,12,False,True,7
+44,Integrated discrete intranet,12,True,True,12
+45,Monitored heuristic software,6,True,False,1
+46,Focused solution-oriented benchmark,7,False,True,4
+47,Self-enabling global budgetary management,6,False,True,1
+48,Fundamental asymmetric support,11,False,False,8
+49,Automated methodical software,13,True,True,13
+50,Assimilated 3rdgeneration forecast,14,False,False,6
+51,Digitized high-level alliance,7,False,True,9
+52,Ergonomic regional knowledgebase,9,False,True,10
+53,Reduced cohesive knowledge user,11,True,True,5
+54,Enhanced systemic artificial intelligence,10,False,True,6
+55,User-centric eco-centric productivity,14,False,True,9
+56,De-engineered coherent customer loyalty,12,True,False,10
+57,Reverse-engineered disintermediate interface,7,True,True,7
+58,Phased reciprocal instruction set,7,True,True,1
+59,Up-sized radical middleware,14,False,False,5
+60,Customer-focused cohesive database,10,True,False,6
+61,Synergized heuristic flexibility,5,True,False,6
+62,Team-oriented eco-centric extranet,8,True,True,1
+63,Open-source background array,6,False,False,2
+64,Multi-channeled 4thgeneration info-mediaries,13,False,True,2
+65,Right-sized systematic workforce,6,True,True,9
+66,Fundamental clear-thinking help-desk,12,False,True,1
+67,Secured exuding data-warehouse,7,True,True,7
+68,Multi-lateral responsive Graphical User Interface,12,False,True,10
+69,Public-key discrete model,6,False,True,9
+70,Multi-tiered discrete Internet solution,13,True,True,6
+71,Advanced contextually-based synergy,13,False,True,9
+72,Total 5thgeneration throughput,10,False,True,6
+73,Reactive hybrid throughput,14,True,True,10
+74,Reduced zero tolerance Internet solution,10,False,True,5
+75,Cloned systematic frame,10,False,False,1
+76,Assimilated intangible neural-net,9,True,False,7
+77,Ameliorated bifurcated Internet solution,8,True,False,12
+78,Optimized zero-defect Internet solution,9,False,True,3
+79,Optional mobile utilization,9,False,True,8
+80,Pre-emptive systemic initiative,14,False,True,13
+81,Organized maximized intranet,9,True,True,1
+82,Visionary multi-tasking groupware,7,False,True,10
+83,Intuitive executive software,10,True,True,5
+84,Multi-tiered intermediate matrices,5,True,False,12
+85,Upgradable reciprocal model,6,False,True,4
+86,Digitized heuristic synergy,9,False,True,12
+87,Decentralized grid-enabled model,12,True,True,1
+88,Vision-oriented encompassing project,11,True,True,12
+89,Monitored intermediate firmware,8,True,False,6
+90,Seamless next generation interface,14,True,True,12
+91,Robust logistical hub,8,True,True,9
+92,Stand-alone intangible Graphic Interface,12,False,True,5
+93,Reverse-engineered next generation capability,7,False,True,2
+94,Progressive 3rdgeneration circuit,9,False,False,11
+95,Public-key modular initiative,10,True,False,8
+96,User-friendly dynamic forecast,12,False,False,9
+97,Versatile coherent solution,11,False,True,1
+98,Virtual bottom-line project,14,False,False,4
+99,Integrated hybrid project,7,True,True,8
+100,Fully-configurable needs-based collaboration,9,True,True,8
+101,Universal multimedia encryption,10,True,False,8
+102,Focused methodical info-mediaries,8,False,False,8
+103,Innovative exuding conglomeration,8,False,True,12
+104,Up-sized zero administration strategy,14,False,False,9
+105,Horizontal neutral collaboration,5,False,False,7
+106,Innovative multi-tasking core,9,False,False,4
+107,Synchronized coherent adapter,11,False,False,13
+108,Fundamental executive array,6,False,False,7
+109,Operative multimedia open system,11,True,False,6
+110,Networked 24/7 solution,8,True,True,6
+111,Synergistic transitional hardware,7,False,True,6
+112,Persistent grid-enabled Graphical User Interface,9,False,False,9
+113,Persevering tangible access,11,False,False,4
+114,Networked local Local Area Network,6,False,False,5
+115,Adaptive 5thgeneration throughput,12,True,False,7
+116,Switchable even-keeled strategy,8,False,True,8
+117,Multi-channeled motivating protocol,5,False,True,5
+118,Assimilated bi-directional budgetary management,6,False,True,1
+119,Face-to-face hybrid service-desk,5,False,False,1
+120,Cross-platform transitional utilization,9,False,True,2
+121,Fully-configurable 5thgeneration architecture,7,True,False,13
+122,Intuitive asymmetric emulation,9,True,True,2
+123,Focused web-enabled customer loyalty,13,True,True,5
+124,Automated mission-critical Local Area Network,12,False,False,6
+125,Persistent intangible help-desk,13,True,False,8
+126,Devolved multi-tasking challenge,5,True,True,12
+127,Networked explicit challenge,13,False,True,7
+128,Team-oriented real-time concept,6,False,False,13
+129,Pre-emptive tertiary protocol,7,False,True,10
+130,Up-sized attitude-oriented solution,14,False,False,8
+131,Persevering client-driven info-mediaries,7,False,True,6
+132,Sharable bottom-line projection,9,True,True,8
+133,Proactive 5thgeneration collaboration,6,False,False,7
+134,Optional uniform migration,6,True,False,2
+135,Cross-platform bifurcated definition,11,True,True,4
+136,Adaptive static monitoring,5,True,True,8
+137,Reactive discrete secured line,10,True,False,3
+138,Streamlined context-sensitive capability,6,False,True,8
+139,Virtual logistical concept,7,True,False,6
+140,Expanded zero-defect frame,12,False,True,13
+141,Stand-alone fresh-thinking secured line,8,True,False,1
+142,Networked responsive hierarchy,9,False,False,7
+143,Face-to-face radical neural-net,10,True,False,3
+144,Re-contextualized well-modulated customer loyalty,9,True,False,6
+145,Inverse bi-directional methodology,8,True,False,13
+146,Devolved intermediate contingency,9,True,True,10
+147,Re-contextualized discrete open system,13,False,True,7
+148,Multi-tiered needs-based parallelism,11,True,False,1
+149,Fully-configurable needs-based encoding,13,False,True,11
+150,Reduced executive encoding,8,False,True,8
