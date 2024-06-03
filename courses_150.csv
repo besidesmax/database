@@ -1,4 +1,4 @@
-﻿course_id,name,ects,active,optional,study_program
+﻿course_id,name,ects,active,optional,program_id
 1,Informatik und Recht,4,true,false,1
 2,Technische Gurndlagen,8,true,false,1
 3,Programmieren 1,5,true,false,1
