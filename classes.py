@@ -1,126 +1,80 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Boolean
-from sqlalchemy.orm import declarative_base
+import datetime
+from sqlalchemy import String, ForeignKey
+from sqlalchemy.orm import DeclarativeBase, relationship, Mapped, mapped_column
+from typing import Annotated
 
-Base = declarative_base()
+# define length of String
+str_100 = Annotated[str, mapped_column(String(100))]
 
 
-class Address(Base):
-    __tablename__ = "addresses"
-
-    address_id = Column("address_id", Integer, primary_key=True)
-    country = Column("country", String(100))
-    city = Column("city", String(100))
-    zip_code = Column("zip_code", Integer)
-    street = Column("street", String(100))
-    building_number = Column("building_number", Integer)
-
-    def __init__(self, address_id, country, city, zip_code, street, building_number):
-        self.address_id = address_id
-        self.country = country
-        self.city = city
-        self.zip_code = zip_code
-        self.street = street
-        self.building_number = building_number
-
-    def __repr__(self):
-        return f"{self.address_id} , {self.country} , {self.city} , {self.zip_code} ,\
-                 {self.street} , {self.building_number}"
+class Base(DeclarativeBase):
+    pass
 
 
 class Student(Base):
     __tablename__ = "students"
 
-    student_id = Column("student_id", Integer, primary_key=True)
-    student_number = Column("student_number", Integer)
-    first_name = Column("first_name", String(50))
-    last_name = Column("last_name", String(50))
-    date_of_birth = Column("date_of_birth", DateTime)
-    address_id = Column("address_id", ForeignKey("addresses.address_id"))
-
-    def __init__(self, student_id, student_number, first_name, last_name, date_of_birth, address_id):
-        self.student_id = student_id
-        self.student_number = student_number
-        self.first_name = first_name
-        self.last_name = last_name
-        self.date_of_birth = date_of_birth
-        self.address_id = address_id
-
-    def __repr__(self):
-        return f"{self.student_id} , {self.student_number} , {self.first_name} , {self.last_name} , \
-                 {self.date_of_birth} , {self.address_id}"
+    student_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=False)
+    student_number: Mapped[int] = mapped_column()
+    first_name: Mapped[str_100] = mapped_column()
+    last_name: Mapped[str_100] = mapped_column()
+    date_of_birth: Mapped[datetime.date] = mapped_column()
+    address_id: Mapped[int] = mapped_column(ForeignKey("addresses.address_id"))
+    address: Mapped["Address"] = relationship("Address", uselist=False, back_populates="student")
+    grade: Mapped["Grade"] = relationship("Grade", uselist=True, back_populates="student")
 
 
-class Course(Base):
-    __tablename__ = "courses"
+class Address(Base):
+    __tablename__ = "addresses"
 
-    course_id = Column("course_id", Integer, primary_key=True, nullable=False)
-    name = Column("name", String(50))
-    ects = Column("ects", Integer)
-    active = Column("active", Boolean)
-    optional = Column("optional", Boolean)
-    study_program = Column("study_program", ForeignKey("study_program.program_id"))
-
-    def __init__(self, course_id, name, ects, active, optional, study_program):
-        self.course_id = course_id
-        self.name = name
-        self.ects = ects
-        self.active = active
-        self.optional = optional
-        self.study_program = study_program
-
-    def __repr__(self):  # TODO show course.name insteadof course.id at requirements also study_program
-        return f"{self.course_id} , {self.name} , {self.ects} , {self.active} , {self.optional} \
-                {self.study_program}"
+    address_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=False)
+    country: Mapped[str_100] = mapped_column()
+    city: Mapped[str_100] = mapped_column()
+    zip_code: Mapped[int] = mapped_column()
+    street: Mapped[str_100] = mapped_column()
+    building_number: Mapped[int] = mapped_column()
+    student: Mapped["Student"] = relationship("Student", uselist=False, back_populates="address")
+    professor: Mapped["Professor"] = relationship("Professor", uselist=False, back_populates="address")
 
 
 class Program(Base):
     __tablename__ = "study_program"
 
-    program_id = Column("program_id", Integer, primary_key=True, nullable=False)
-    name = Column("name", String(50))
+    program_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=False)
+    name: Mapped[str_100] = mapped_column()
+    course: Mapped["Course"] = relationship("Course", uselist=True, back_populates="study_program")
 
-    def __init__(self, program_id, name):
-        self.program_id = program_id
-        self.name = name
 
-    def __repr__(self):
-        return f" {self.program_id} , {self.name}"
+class Course(Base):
+    __tablename__ = "courses"
+
+    course_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=False)
+    name: Mapped[str_100] = mapped_column()
+    ects: Mapped[int] = mapped_column()
+    active: Mapped[bool] = mapped_column()
+    optional: Mapped[bool] = mapped_column()
+    program_id: Mapped[int] = mapped_column(ForeignKey("study_program.program_id"))
+    study_program: Mapped["Program"] = relationship("Program", uselist=True, back_populates="course")
+    grade: Mapped["Grade"] = relationship("Grade", uselist=True, back_populates="course")
 
 
 class Professor(Base):
     __tablename__ = "professor"
 
-    professor_id = Column("professor_id", Integer, primary_key=True, nullable=False)
-    first_name = Column("first_name", String(50))
-    last_name = Column("last_name", String(50))
-    date_of_birth = Column("date_of_birth", DateTime)
-    address_id = Column("address_id", ForeignKey("addresses.address_id"))
-
-    def __init__(self, professor_id, first_name, last_name, date_of_birth, address_id):
-        self.professor_id = professor_id
-        self.first_name = first_name
-        self.last_name = last_name
-        self.date_of_birth = date_of_birth
-        self.address_id = address_id
-
-    def __repr__(self):
-        return f"{self.professor_id} , {self.first_name} , {self.last_name} , \
-                 {self.date_of_birth} , {self.address_id}"
+    professor_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=False)
+    first_name: Mapped[str_100] = mapped_column()
+    last_name: Mapped[str_100] = mapped_column()
+    date_of_birth: Mapped[datetime.date] = mapped_column()
+    address_id: Mapped[int] = mapped_column(ForeignKey("addresses.address_id"))
+    address: Mapped["Address"] = relationship("Address", uselist=False, back_populates="professor")
 
 
 class Grade(Base):
     __tablename__ = "grades"
 
-    grade_id = Column("grade_id", Integer, primary_key=True, autoincrement=False)
-    course_id = Column("course_id", ForeignKey("courses.course_id"))
-    student_id = Column("student_id", ForeignKey("students.student_id"))
-    grade = Column("grade", Integer)
-
-    def __init__(self, grade_id, course_id, student_id, grade):
-        self.grade_id = grade_id
-        self.course_id = course_id
-        self.student_id = student_id
-        self.grade = grade
-
-    def __repr__(self):
-        return f" {self.grade_id} , {self.course_id} , {self.student_id} , {self.grade}"
+    grade_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=False)
+    course_id: Mapped[int] = mapped_column(ForeignKey("courses.course_id"))
+    course: Mapped["Course"] = relationship("Course", uselist=True, back_populates="grade")
+    student_id: Mapped[int] = mapped_column(ForeignKey("students.student_id"))
+    student: Mapped["Student"] = relationship("Student", uselist=True, back_populates="grade")
+    grade: Mapped[int] = mapped_column()
