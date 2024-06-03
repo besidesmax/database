@@ -8,7 +8,8 @@ from import_data import import_data_csv
 if database_exists(engine):
     drop_database(engine)
     create_database(engine)
-else:create_database(engine)
+else:
+    create_database(engine)
 
 # creates all tables if not exist
 Base.metadata.create_all(engine_create)
