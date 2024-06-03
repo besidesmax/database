@@ -8,9 +8,9 @@ password = "!9PQ!X%40^1B5ChkwE"
 port = "3306"
 database = "database_university"
 
-# TODO insert Test if Server exist and connection is possible
+# TODO insert Test if Server exist and connection is possible + delete echo=True
 # engine for sqlalchemy operations
 engine_create = \
-    create_engine("mysql+pymysql://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database)
+    create_engine("mysql+pymysql://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database, echo=True)
 # engine for sqlalchemy_utils operations
 engine = ("mysql+pymysql://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database)
