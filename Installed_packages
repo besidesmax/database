@@ -4,3 +4,4 @@ The following packages are installed in the database.env
 -pymysql
 -mysql-connector-python (uninstall)
 -pandas
+-matplotlib
