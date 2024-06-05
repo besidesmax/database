@@ -1,12 +1,9 @@
 import matplotlib.pyplot as plt
-
 from engine import engine_create
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import select, func
 from classes import Student, Address, Program, Course, Professor, Grade
 import pandas as pd
-from matplotlib import pyplot as py
-from matplotlib import style
 
 # provide the Session
 Session = sessionmaker(bind=engine_create)
@@ -47,28 +44,73 @@ def students_avg_grade_xy_ects(ects_input):
 
 # counts how many times the same avg_grade
 def show_frequency_avg_grade(ects_input):
+    """
+    creates a plot which displays the avg_grades of all students,
+    which completed a certain amount of ects (=Input)
+    """
+    # Get the data frame based on the input ECTS
     df = pd.DataFrame(students_avg_grade_xy_ects(ects_input))
     column_serie = df["avg_grade"]
-    frequency = column_serie.value_counts()
-    df_frequency = pd.DataFrame(frequency)
+
+    # Calculate the frequency of each average grade
+    frequency = column_serie.value_counts().sort_index()
+    df_frequency = pd.DataFrame(frequency, columns=["count"])
+
     count_list = df_frequency["count"].tolist()
-    index_list = pd.DataFrame(df_frequency.index)["avg_grade"].tolist()
+    index_list = df_frequency.index.tolist()
 
-    #create a plot
-    #style.use("ggplot")
+    # Create a plot
+    plt.style.use("ggplot")
     fig, ax = plt.subplots(figsize=(8, 6))
-    ax.bar(index_list, count_list, width=0.05, label="grades")
+    ax.bar(index_list, count_list, width=0.05, label="Grades")
+
+    # Adding legend, grid, labels, and title
     ax.legend()
-    ax.grid(visible=True, color="r")
-    plt.ylabel("quantity of grade")
-    plt.xlabel("grades")
-    plt.title("the distribution of grades with min xy ects")
+    ax.grid(visible=True, color="gray", linestyle='--', linewidth=0.5)
+    ax.set_ylabel("Number of Students")
+    ax.set_xlabel("Average Grade")
+    ax.set_title("Distribution of Average Grades with Minimum ECTS")
+
     plt.show()
-    return plt.show()
 
 
-test = show_frequency_avg_grade(100)
+def show_all_students_from_country_xy(input_country: str):
+    """
+    shows all student from a country
+    :param input_country:
+    :return:
+    """
+    query = (select(Student.student_id, Student.student_number,
+                    Student.first_name, Student.last_name, Address.country)
+             .join(Address, Address.address_id == Student.address_id)
+             .where(Address.country == input_country)
+             .group_by(Student.student_id))
 
+    results = session.execute(query).all()
+    return results
+
+
+def show_courses_from_student_xy (student_input):
+    """
+    shows which course student xy has completed
+    :param student_input: student_id
+    :return:
+    """
+    query = (select(Grade.student_id, Student.first_name, Student.last_name,
+                   Course.course_id, Course.name, Program.name)
+             .join(Student, Student.student_id == Grade.student_id)
+             .join(Course, Course.course_id == Grade.course_id)
+             .join(Program, Program.program_id == Course.program_id)
+             .where(Grade.student_id == student_input)
+             )
+
+    results = session.execute(query).all()
+    return results
+
+
+tests = show_courses_from_student_xy(5)
+for test in tests:
+    print(test)
 
 
 '''
