@@ -10,8 +10,6 @@ Session = sessionmaker(bind=engine_create)
 session = Session()
 
 
-# get the avg_grade of all students which completed xy ECTS
-# TODO: add exception-handler
 def students_avg_grade_xy_ects(ects_input):
     """
     This function returns the average grade of all students
@@ -52,7 +50,6 @@ def students_avg_grade_xy_ects(ects_input):
     return results
 
 
-# counts how many times the same avg_grade
 def show_plot_frequency_avg_grade(ects_input):
     """
     Plots the frequency distribution of average grades for students with at least a specified number of ECTS credits.
