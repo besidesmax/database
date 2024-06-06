@@ -7,10 +7,11 @@ Database is a program to create a database and/ or analyse the data of a databas
 ### Prerequisites
 - Python 3.12
 - Anaconda Navigator
+- MySQL 8.0
 
 ## Usage Instructions
 1. Clone the repository
-2. create a sql-server  and remeber: hostname, port, username and password
+2. create a MySQL-server  and remeber: hostname, port, username and password
 3. use Anaconda Navigator and import the database.yaml from the repository
 5. run main.py
 6. needed input: hostname, port, username and password in - These will be saved as defaults for future runs.
