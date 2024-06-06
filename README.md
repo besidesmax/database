@@ -1,7 +1,7 @@
 # Database
 
 ## Overview
-Database is a program to create a database and/ or analyse the data of a database with a few given functions
+Database is a program to create a database and analyse the data of a database with a few given functions
 ## Installation Instructions
 
 ### Prerequisites
