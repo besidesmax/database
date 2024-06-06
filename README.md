@@ -7,7 +7,7 @@ Database is a program to create a database and/ or analyse the data of a databas
 ### Prerequisites
 - Python 3.12
 - Anaconda Navigator
-- MySQL 8.0
+- MySQL Server 8.0
 
 ## Usage Instructions
 1. Clone the repository
