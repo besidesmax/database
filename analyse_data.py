@@ -90,14 +90,14 @@ def show_all_students_from_country_xy(input_country: str):
     return results
 
 
-def show_courses_from_student_xy (student_input):
+def show_courses_from_student_xy(student_input):
     """
     shows which course student xy has completed
     :param student_input: student_id
     :return:
     """
     query = (select(Grade.student_id, Student.first_name, Student.last_name,
-                   Course.course_id, Course.name, Program.name)
+                    Course.course_id, Course.name, Program.name)
              .join(Student, Student.student_id == Grade.student_id)
              .join(Course, Course.course_id == Grade.course_id)
              .join(Program, Program.program_id == Course.program_id)

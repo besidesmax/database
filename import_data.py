@@ -25,11 +25,9 @@ def import_data_csv():
 
     # add professor_50.csv to database
     df_professor.to_sql(con=engine, name=Professor.__tablename__, if_exists="append", index=False)
-    
+
     # add courses_250.csv to database
     df_course.to_sql(con=engine, name=Course.__tablename__, if_exists="append", index=False)
 
     # add grades_2300.csv to database
     df_grades.to_sql(con=engine, name=Grade.__tablename__, if_exists="append", index=False)
-
-
