@@ -14,7 +14,7 @@ df_professor = pd.read_csv("professor_50.csv", encoding="utf-8")
 
 def import_data_csv():
 
-    # add student_2000.csv to database TODO: add exception, when exist = do nothing
+    # add student_2000.csv to database
     df_address.to_sql(con=engine, name=Address.__tablename__, if_exists="append", index=False)
 
     # add student_2000.csv to database
