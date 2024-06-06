@@ -33,6 +33,7 @@ def import_data_csv():
     # add grades_2300.csv to database
     df_grades.to_sql(con=engine, name=Grade.__tablename__, if_exists="append", index=False)
 
+
 def check_csv_files_exist():
     """
     Check if all the specified CSV files exist.

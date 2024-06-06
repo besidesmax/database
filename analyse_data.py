@@ -142,7 +142,7 @@ def courses_from_student_xy(student_input):
     if not isinstance(student_input, int) or student_input < 1:
         raise TypeError("The student_input must be a non-negative integer, higher than 0")
 
-    # Checks if the input is a element of Student.student_id
+    # Checks if the input is an element of Student.student_id
     # gets all element of Student.student_id
     query_element = select(Student.student_id)
     result_element = (pd.DataFrame(session.execute(query_element).all()))["student_id"].tolist()
@@ -209,6 +209,3 @@ def courses_teaches_from_professor_xy(input_prof_id):
     ]
 
     return result_list
-
-test = courses_from_student_xy(5)
-print(test)
