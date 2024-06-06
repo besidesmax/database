@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine
+from sqlalchemy.exc import OperationalError
 
 # login-data for the Server TODO change with input or import form data at the end
 hostname = "localhost"
@@ -14,3 +15,13 @@ engine_create = \
     create_engine("mysql+pymysql://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database)
 # engine for sqlalchemy_utils operations
 engine = ("mysql+pymysql://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database)
+
+
+def test_database_connection(engine):
+    try:
+        # Attempt to connect to the database
+        connection = engine.connect()
+        connection.close()
+        print("Database connection successful.")
+    except OperationalError as e:
+        raise ConnectionError(f"Failed to connect to the database. Error: {e}")
