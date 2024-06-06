@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from engine import engine
 from classes import Address, Student, Course, Program, Grade, Professor
@@ -31,3 +32,23 @@ def import_data_csv():
 
     # add grades_2300.csv to database
     df_grades.to_sql(con=engine, name=Grade.__tablename__, if_exists="append", index=False)
+
+def check_csv_files_exist():
+    """
+    Check if all the specified CSV files exist.
+
+    Returns:
+        bool: True if all files exist, False otherwise.
+    """
+    csv_files = ["addresses_2050.csv",
+                 "students_2000.csv",
+                 "study_program_13.csv",
+                 "courses_150.csv",
+                 "grades_23000.csv",
+                 "professor_50.csv"
+                 ]
+    for file in csv_files:
+        if not os.path.isfile(file):
+            print(f"File not found: {file}")
+            return False
+    return True
