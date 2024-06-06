@@ -12,7 +12,9 @@ Database is a program to create a database and/ or analyse the data of a databas
 1. Clone the repository
 2. create a sql-server  and remeber: hostname, port, username and password
 3. use Anaconda Navigator and import the database.yaml from the repository
-5. run main.py and put hostname, port, username and password in - this will be saved as default and if it isn't change, the next time you just need to press enter.
+5. run main.py
+6. needed input: hostname, port, username and password in - These will be saved as defaults for future runs.
+   
 ### Analysis Functions
 The program provides the following functions for data analysis:
 
@@ -34,6 +36,3 @@ The following Python libraries are required and can be installed via Anaconda:
 - pymysql 1.0.2  
 - pandas 2.2.1
 - matplotlib 3.8.4
-
-
-
