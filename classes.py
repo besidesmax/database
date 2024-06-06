@@ -69,7 +69,6 @@ class Professor(Base):
     date_of_birth: Mapped[datetime.date] = mapped_column()
     address_id: Mapped[int] = mapped_column(ForeignKey("addresses.address_id"))
     address: Mapped["Address"] = relationship("Address", uselist=False, back_populates="professor")
-    course_id: Mapped[int] = mapped_column(ForeignKey("courses.course_id"))
     courses: Mapped["Course"] = relationship("Course", uselist=True, back_populates="professor")
 
 
