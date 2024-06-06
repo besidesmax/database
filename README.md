@@ -1,46 +1,39 @@
 # Database
 
 ## Overview
-Database is a program to create a database and/ or analyse the data of a database with a few given functions
+Database is a program to create a database and analyse the data of a database with a few given functions
 ## Installation Instructions
 
 ### Prerequisites
-- Python 3.8+
-- 
-1. Prerequisites (software or libraries needed before installation).
-2. How to download or clone the repository.
-3. How to install the program (commands or steps).
+- Python 3.12
+- Anaconda Navigator
+- MySQL Server 8.0
 
 ## Usage Instructions
-A guide on how to use your program. This should include:
+1. Clone the repository
+2. create a MySQL-server  and remeber: hostname, port, username and password
+3. use Anaconda Navigator and import the database.yaml from the repository
+5. run main.py
+6. needed input: hostname, port, username and password in - These will be saved as defaults for future runs.
+   
+### Analysis Functions
+The program provides the following functions for data analysis:
 
-1. Basic commands or operations.
-2. Examples of usage.
-3. Any configuration or setup required.
+- **students_avg_grade_xy_ects**: Returns the average grade of all students who have completed more than a specified number of ECTS credits.
+- **show_plot_frequency_avg_grade**: Plots the frequency distribution of average grades for students with at least a specified number of ECTS credits.
+- **all_students_from_country_xy**: Retrieves and displays a list of students from a specified country.
+- **courses_from_student_xy**: Shows the courses that a specified student has completed.
+- **courses_teaches_from_professor_xy**: Retrieves a list of courses taught by a specified professor along with the program name.
 
 ## Features
-A list of the main features of your program. This can include:
-
-- Feature 1
-- Feature 2
-- Feature 3
+- Create and manage a SQL database.
+- Analyze and visualize student and course data.
+- Retrieve detailed information on students, courses, and professors.
 
 ## Dependencies
-A list of libraries, frameworks, or other software that your program depends on, along with their versions.
-
-## Contributing
-Guidelines for how others can contribute to your project. This can include:
-
-- How to report bugs.
-- How to suggest features.
-- How to submit code changes.
-
-## License
-Information about the licensing of your program. If you're using an open-source license, include the license text or a link to it.
-
-## Contact Information
-How users can contact you for support or with questions. This can include your email, a link to an issue tracker, or a discussion forum.
-
-## Acknowledgements
-A section to thank those who have contributed to the project or any resources that were helpful during development.
-
+The following Python libraries are required and can be installed via Anaconda:
+- sqlalchemy 2.0.25
+- sqlalchemy-utils 0.41.1
+- pymysql 1.0.2  
+- pandas 2.2.1
+- matplotlib 3.8.4
