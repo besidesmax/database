@@ -210,3 +210,5 @@ def courses_teaches_from_professor_xy(input_prof_id):
 
     return result_list
 
+test = courses_from_student_xy(5)
+print(test)
