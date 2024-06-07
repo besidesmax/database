@@ -1,7 +1,8 @@
 # Database
 
 ## Overview
-Database is a program to create a database and analyse the data of a database with a few given functions
+The Database program is designed to create a MySQL database and analyze its data using various built-in functions. It enables detailed data management and analysis, particularly for student and course information.
+
 ## Installation Instructions
 
 ### Prerequisites
@@ -9,28 +10,25 @@ Database is a program to create a database and analyse the data of a database wi
 - Anaconda Navigator
 - MySQL Server 8.0
 
-## Usage Instructions
+### Steps to Install
 1. Clone the repository
-2. create a MySQL-server  and remember: hostname, port, username and password
-3. use Anaconda Navigator and import the database.yaml from the repository
-4. run main.py
-5. needed input: hostname, port, username and password in - These will be saved as defaults for future runs.
-6. for data analysis you can run:
-    - students_avg_grade_xy_ects.py
-    - show_plot_frequency_avg_grade.py
-    - all_students_from_country_xy.py
-    - courses_from_student_xy.py
-    - courses_teaches_from_professor_xy.py
-7. or you can input the func from analyse_data in a new file and work with them
-   
-### Analysis Functions
-The program provides the following functions for data analysis:
+2. Create a MySQL Server:
+   - Set up a MySQL server and take note of the following details: hostname, port, username, and password.
+3. Import Conda Environment:
+   - Open Anaconda Navigator.
+   - Import the `database.yaml` file from the cloned repository to set up the required environment.
+4. Run the Main Program
+   - Enter the MySQL server details (hostname, port, username, and password) when prompted. These will be saved as defaults for future ru
 
-- **students_avg_grade_xy_ects**: Returns the average grade of all students who have completed more than a specified number of ECTS credits.
-- **show_plot_frequency_avg_grade**: Plots the frequency distribution of average grades for students with at least a specified number of ECTS credits.
-- **all_students_from_country_xy**: Retrieves and displays a list of students from a specified country.
-- **courses_from_student_xy**: Shows the courses that a specified student has completed.
-- **courses_teaches_from_professor_xy**: Retrieves a list of courses taught by a specified professor along with the program name.
+## Usage Instructions   
+### Analysis Functions
+For data analysis, you can run the following scripts directly:
+
+- **students_avg_grade_xy_ects.py**: Returns the average grade of all students who have completed more than a specified number of ECTS credits.
+- **show_plot_frequency_avg_grade.py**: Plots the frequency distribution of average grades for students with at least a specified number of ECTS credits.
+- **all_students_from_country_xy.py**: Retrieves and displays a list of students from a specified country.
+- **courses_from_student_xy.py**: Shows the courses that a specified student has completed.
+- **courses_teaches_from_professor_xy.py**: Retrieves a list of courses taught by a specified professor along with the program name.
 
 ## Features
 - Create and manage a SQL database.
