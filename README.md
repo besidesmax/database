@@ -11,10 +11,17 @@ Database is a program to create a database and analyse the data of a database wi
 
 ## Usage Instructions
 1. Clone the repository
-2. create a MySQL-server  and remeber: hostname, port, username and password
+2. create a MySQL-server  and remember: hostname, port, username and password
 3. use Anaconda Navigator and import the database.yaml from the repository
-5. run main.py
-6. needed input: hostname, port, username and password in - These will be saved as defaults for future runs.
+4. run main.py
+5. needed input: hostname, port, username and password in - These will be saved as defaults for future runs.
+6. for data analysis you can run:
+    - students_avg_grade_xy_ects.py
+    - show_plot_frequency_avg_grade.py
+    - all_students_from_country_xy.py
+    - courses_from_student_xy.py
+    - courses_teaches_from_professor_xy.py
+7. or you can input the func from analyse_data in a new file and work with them
    
 ### Analysis Functions
 The program provides the following functions for data analysis:
